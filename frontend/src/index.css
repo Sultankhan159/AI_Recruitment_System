@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-dark-50: #f8fafc;
+  --color-dark-100: #f1f5f9;
+  --color-dark-200: #e2e8f0;
+  --color-dark-300: #cbd5e1;
+  --color-dark-400: #94a3b8;
+  --color-dark-500: #64748b;
+  --color-dark-600: #475569;
+  --color-dark-700: #334155;
+  --color-dark-800: #1e293b;
+  --color-dark-900: #0f172a;
+  --color-dark-950: #020617;
+
+  --color-primary-50: #f0f3ff;
+  --color-primary-100: #e1e7ff;
+  --color-primary-200: #c2d0ff;
+  --color-primary-300: #94adff;
+  --color-primary-400: #5c7eff;
+  --color-primary-500: #3b5cff;
+  --color-primary-600: #253aff;
+  --color-primary-700: #1c28eb;
+  --color-primary-800: #1921bf;
+  --color-primary-900: #1b2296;
+  --color-primary-950: #101358;
+
+  --font-sans: "Outfit", "Inter", sans-serif;
+}
+
+/* Custom premium design classes */
+.glassmorphism {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #cbd5e1 0%, #3b5cff 50%, #94adff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.8s ease;
+}
+
+.glow-btn:hover::after {
+  left: 120%;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 92, 255, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(59, 92, 255, 0.15);
+}
