@@ -81,6 +81,7 @@ public class CandidateProfileService {
                 .build();
 
         Education saved = educationRepository.save(education);
+        candidate.getEducation().add(saved);
         return mapToEducationDto(saved);
     }
 
@@ -137,6 +138,7 @@ public class CandidateProfileService {
                 .build();
 
         Experience saved = experienceRepository.save(experience);
+        candidate.getExperience().add(saved);
         return mapToExperienceDto(saved);
     }
 
@@ -189,6 +191,7 @@ public class CandidateProfileService {
                 .build();
 
         CandidateSkill saved = candidateSkillRepository.save(skill);
+        candidate.getSkills().add(saved);
         return mapToSkillDto(saved);
     }
 
@@ -222,6 +225,7 @@ public class CandidateProfileService {
                 .build();
 
         Certification saved = certificationRepository.save(certification);
+        candidate.getCertifications().add(saved);
         return mapToCertificationDto(saved);
     }
 

@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/recruitment_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
     username: root
-    password: "1234"
+    password: "Papun@3829"
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -45,4 +45,7 @@ app:
   jwt:
     secret: =======================AIRecruitmentManagementSystemSecretKey2026=======================
     expirationMs: 86400000
+  gemini:
+    apiKey: ${GEMINI_API_KEY:dummy-key}
+    model: gemini-2.5-flash
 

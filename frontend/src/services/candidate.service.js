@@ -74,10 +74,59 @@ const deleteCertification = async (id) => {
   return response.data;
 };
 
+const getJobs = async () => {
+  const response = await api.get('/jobs');
+  return response.data;
+};
+
+const getApplications = async () => {
+  const response = await api.get('/candidate/applications');
+  return response.data;
+};
+
+const uploadResume = async (file) => {
+  const formData = new FormData();
+  formData.append('file', file);
+  const response = await api.post('/candidate/resume/upload', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+  return response.data;
+};
+
+const getInterviews = async () => {
+  const response = await api.get('/candidate/interviews');
+  return response.data;
+};
+
+const getNotifications = async () => {
+  const response = await api.get('/candidate/notifications');
+  return response.data;
+};
+
+const markNotificationAsRead = async (id) => {
+  const response = await api.put(`/candidate/notifications/${id}/read`);
+  return response.data;
+};
+
+const deleteNotification = async (id) => {
+  const response = await api.delete(`/candidate/notifications/${id}`);
+  return response.data;
+};
+
+const getRecommendations = async () => {
+  const response = await api.get('/candidate/recommendations');
+  return response.data;
+};
+
 const CandidateService = {
   getProfile,
   updateProfile,
   applyForJob,
+  getJobs,
+  getApplications,
+  uploadResume,
   addEducation,
   updateEducation,
   deleteEducation,
@@ -89,6 +138,11 @@ const CandidateService = {
   addCertification,
   updateCertification,
   deleteCertification,
+  getInterviews,
+  getNotifications,
+  markNotificationAsRead,
+  deleteNotification,
+  getRecommendations,
 };
 
 export default CandidateService;
